@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static',filename = 'styles/inputstyle.css') }}">
+</head>
+<body>
+	<div class="position">
+		<div class="jumbotron vertical-center">
+<form method="POST" action="/send">
+
+	<h2 >{{current_user.username}}</h2>
+	<p >{{current_user.email}}</p>
+	{%with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages%}
+		{% for category,message in messages%}
+			<div class="alert alert-{{category}}">
+						{{message}}
+			</div>
+		{%endfor%}
+		{%endif%}
+	{%endwith%}
+	<a class="nav-item nav-link" href="{{url_for('logout')}}">Logout</a><a class="nav-item nav-link" href="{{url_for('account')}}">myAccount</a>
+	<h2>Enter The Movie</h2>
+	<div class="form-group">
+			<input type="text" class="form-control" name="movie_name"  placeholder="Movie">
+		</div>
+		<input class="btn btn-success buttony" type="submit" value="submit">
+	</form>
+</div>
+</div>
+<!--div class="maindiv">
+	<form class="myform" method="POST" action="/send">
+		<h2>Enter the Movie</h2>
+		<div class="myinput">
+			<input type="text" class="iptext" name="movie_name" placeholder="movie">
+			<input type="submit" class="btn btn-success" value="submit">
+		</div>
+	</form>
+</div-->
+</body>
+</html>

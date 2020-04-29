@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!link rel="stylesheet" href="{{ url_for('static',filename = 'styles/movieinput.css') }}">
+  </head>
+  <body>
+    <header>
+    <nav>
+      <ul class="nav_link">
+        <li><a href="#">{{current_user.username}}</a></li>
+        <li><a href="#">{{current_user.email}}</a></li>
+      </ul>
+    </nav>
+    <a class="cta" href="{{url_for('account')}}"><button type="button" name="button">myAccount</button></a>
+    <a href="{{url_for('logout')}}" class="cta"><button type="button" name="button">Logout</button></a>
+    </header>
+    <form method="POST" action="/send">
+      <h2>Enter The Movie</h2>
+    	<div class="form-group">
+    			<input type="text" class="form-control" name="movie_name"  placeholder="Movie">
+    		</div>
+    		<input class="btn btn-success button" style="background:rgba(0, 136, 169, 1)" type="submit" value="submit">
+    	</form>
+  </body>
+</html>

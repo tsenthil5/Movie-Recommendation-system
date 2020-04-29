@@ -1,0 +1,31 @@
+
+
+ .pics{
+	float:left;
+    height: 450px;
+  width: 28%;
+  border: 3px solid red;
+  margin: 5px;
+  text-align: center;
+  border-radius: 25px;
+  padding: 30px;
+}
+
+body{
+	background-color: #feeae7;
+}
+
+#heading
+{
+	text-align: center;
+	font-family: Pacifico;
+}
+
+h3
+{
+	font-family: Acme;
+}
+h4
+{
+	font-family: Hind Siliguri;
+}

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Carousel</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Acme|Hind+Siliguri|Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jomolhari&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<script>
+  jQuery(document).ready(function() {
+
+
+
+  jQuery('.carousel[data-type="multi"] .item').each(function(){
+    var next = jQuery(this).next();
+    if (!next.length) {
+      next = jQuery(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo(jQuery(this));
+
+    for (var i=0;i<2;i++) {
+      next=next.next();
+      if (!next.length) {
+        next = jQuery(this).siblings(':first');
+      }
+      next.children(':first-child').clone().appendTo($(this));
+    }
+  });
+
+});
+
+
+jQuery(document).ready(function() {
+
+ $.ajax({
+    type: "POST",
+    url: "/process",
+    success: function(data) {
+      $('#img').attr("src",data.img_link_f[0]);
+      $('#h1_1').html('<h1><i><b></b></i></h1>' + data.recom_movie[0]);
+      $('#h2_1').html('<h1><i><b>Synopsys:</b></i></h1>'+ data.synopsys_f[0]);
+      $('#h2_2').html('<h1><i><b>Cast:</b></i></h1>'+data.cast_f[0]);
+    }
+  });
+});
+ jQuery(document).ready(function() {
+ $('#btn0').click(function(event){
+  $.ajax({
+    type: "POST",
+    url: "/process",
+    success: function(data) {
+      $('#img').attr("src",data.img_link_f[0]);
+      $('#h1_1').html('<h1><i><b></b></i></h1>' + data.recom_movie[0]);
+      $('#h2_1').html('<h1><i><b>Synopsys:</b></i></h1>'+ data.synopsys_f[0]);
+      $('#h2_2').html('<h1><i><b>Cast:</b></i></h1>'+data.cast_f[0]);
+
+    }
+  });
+  event.preventDefault();
+});
+
+});
+ jQuery(document).ready(function() {
+$('#btn1').click(function(event){
+  $.ajax({
+    type: "POST",
+    url: "/process",
+    success: function(data) {
+      $('#img').attr("src",data.img_link_f[1]);
+      $('#h1_1').html('<h1><i><b></b></i></h1>' + data.recom_movie[1]);
+      $('#h2_1').html('<h1><i><b>Synopsys:</b></i></h1>'+ data.synopsys_f[1]);
+      $('#h2_2').html('<h1><i><b>Cast:</b></i></h1>'+data.cast_f[1]);
+
+    }
+  });
+  event.preventDefault();
+});
+
+});
+ jQuery(document).ready(function() {
+$('#btn2').click(function(event){
+  $.ajax({
+    type: "POST",
+    url: "/process",
+    success: function(data) {
+      $('#img').attr("src",data.img_link_f[2]);
+      $('#h1_1').html('<h1><i><b></b></i></h1>' + data.recom_movie[2]);
+      $('#h2_1').html('<h1><i><b>Synopsys:</b></i></h1>'+ data.synopsys_f[2]);
+      $('#h2_2').html('<h1><i><b>Cast:</b></i></h1>'+data.cast_f[2]);
+
+    }
+  });
+
+event.preventDefault();
+});
+});
+  jQuery(document).ready(function() {
+$('#btn3').click(function(event){
+  $.ajax({
+    type: "POST",
+    url: "/process",
+    success: function(data) {
+      $('#img').attr("src",data.img_link_f[3]);
+      $('#h1_1').html('<h1><i><b></b></i></h1>' + data.recom_movie[3]);
+      $('#h2_1').html('<h1><i><b>Synopsys:</b></i></h1>'+ data.synopsys_f[3]);
+      $('#h2_2').html('<h1><i><b>Cast:</b></i></h1>'+data.cast_f[3]);
+
+    }
+  });
+event.preventDefault();
+});
+});
+  jQuery(document).ready(function() {
+$('#btn4').click(function(event){
+  $.ajax({
+    type: "POST",
+    url: "/process",
+    success: function(data) {
+      $('#img').attr("src",data.img_link_f[4]);
+      $('#h1_1').html('<h1><i><b></b></i></h1>' + data.recom_movie[4]);
+      $('#h2_1').html('<h1><i><b>Synopsys:</b></i></h1>'+ data.synopsys_f[4]);
+      $('#h2_2').html('<h1><i><b>Cast:</b></i></h1>'+data.cast_f[4]);
+
+    }
+  });
+event.preventDefault();
+});
+});
+jQuery(document).ready(function() {
+$('#btn5').click(function(event){
+  $.ajax({
+    type: "POST",
+    url: "/process",
+    success: function(data) {
+      $('#img').attr("src",data.img_link_f[5]);
+      $('#h1_1').html('<h1><i><b></b></i></h1>' + data.recom_movie[5]);
+      $('#h2_1').html('<h1><i><b>Synopsys:</b></i></h1>'+ data.synopsys_f[5]);
+      $('#h2_2').html('<h1><i><b>Cast:</b></i></h1>'+data.cast_f[5]);
+
+    }
+  });
+event.preventDefault();
+});
+
+});
+
+
+</script>
+<style>
+.carousel-control.right {
+  background-image:none;
+  margin-right: -100px;
+}
+.carousel-control.left
+{
+background-image:none;
+  margin-left: -100px;
+}
+
+.img-responsive{
+  width:100%;
+  height:auto;
+  border-radius: 5px;
+  
+}
+
+@media (min-width: 992px ) {
+  .carousel-inner .active.left {
+    left: -25%;
+  }
+  .carousel-inner .next {
+    left:  25%;
+  }
+  .carousel-inner .prev {
+    left: -25%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px ) {
+  .carousel-inner .active.left {
+    left: -33.3%;
+  }
+  .carousel-inner .next {
+    left:  33.3%;
+  }
+  .carousel-inner .prev {
+    left: -33.3%;
+  }
+  .active > div:first-child {
+    display:block;
+  }
+  .active > div:first-child + div {
+    display:block;
+  }
+  .active > div:last-child {
+    display:none;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-inner .active.left {
+    left: -100%;
+  }
+  .carousel-inner .next {
+    left:  100%;
+  }
+  .carousel-inner .prev {
+    left: -100%;
+  }
+  .active > div {
+    display:none;
+  }
+  .active > div:first-child {
+    display:block;
+  }
+
+}
+
+
+#heading
+{
+  text-align: center;
+  font-family: Pacifico;
+  padding:20px;
+  color: #ffffff;
+}
+#main
+{
+  border: 3px solid #ffffff;
+  margin: 5px;
+  border-radius: 25px;
+  height: 590px;
+  width: 100%;
+}
+#fruitscarousel
+{
+  top: 50px;
+  padding:30px;
+
+}
+#img_d
+{
+
+  margin: 5px;
+  border-radius: 25px;
+  height: 580px;
+  width: 500px;
+  float: left;
+
+}
+#synopsys
+{
+  font-family: Roboto;
+  margin: 5px;
+  border-radius: 25px;
+  height: 500px;
+  width: 600px;
+  float: right;
+}
+#h2_1
+{
+ padding-top: 10px;
+ padding-left: 5px;
+ padding-right: 5px;
+
+ margin-bottom: 30px;
+ color: #ffffff;
+
+}
+#h2_2
+{
+ padding-top: 5px;
+ padding-left: 5px;
+ padding-right: 5px;
+ color: #ffffff;
+
+}
+#h1_1
+{
+  text-align: center;
+  color: #ffffff;
+  font-size: 60px;
+}
+#img
+{
+  height: 60%;
+  width: 50%;
+  box-shadow: -1px 9px 28px 1px rgba(199,195,199,1);
+  border-radius: 5px;
+}
+
+.bun {
+  background-color:#33bbff ; /* Green */
+  border: none;
+  color: black;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px 6px;
+  margin-bottom: 6px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.bun1 {
+  background-color: black;
+  color: white;
+  border: 2px solid #004466;
+  border-radius: 5px;
+}
+
+.bun1:hover {
+  background-color: #004466;
+  color: black;
+  box-shadow: -1px 9px 28px 1px rgba(199,195,199,1);
+}
+
+body
+{
+  background-size: 100%, 100%;
+  background-image: url("{{url_for('static',filename='hd.jpg')}}");
+
+
+}
+
+
+</style>
+
+</head>
+<body>
+<div class="container">
+  <div id="heading">
+<h1>Recommended movies</h1>
+  </div>
+<!--The main div for carousel-->
+
+<div class="container text-center">
+  <div id="main">
+    <h1 id = "h1_1"></h1>
+<div id = 'img_d'>
+  <img id ='img'src="">
+</div>
+
+<div id = 'synopsys'>
+  <h2 id = 'h2_1'></h2>
+
+  <h2 id = 'h2_2'></h2>
+
+
+</div>
+
+
+
+
+</div>
+<div class="carousel slide row" data-ride="carousel" data-type="multi" data-interval = "false" id="fruitscarousel">
+
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="col-md-3 col-sm-4 col-xs-12" ><a href="#"><img src="{{img_link_f[0]}}" class="img-responsive" ></a>
+            <button type="button" class="bun bun1" id="btn0">View</button></div>
+        </div>
+        <div class="item">
+            <div class="col-md-3 col-sm-4 col-xs-12" ><a href="#"><img src="{{img_link_f[1]}}" class="img-responsive" ></a>
+            <button type = "button"class="bun bun1"id = "btn1">View</button></div>
+        </div>
+        <div class="item">
+            <div class="col-md-3 col-sm-4 col-xs-12" ><a href="#"><img src="{{img_link_f[2]}}" class="img-responsive" ></a>
+            <button type = "button"class="bun bun1" id="btn2">View</button></div>
+        </div>
+        <div class="item">
+            <div class="col-md-3 col-sm-4 col-xs-12" ><a href="#"><img src="{{img_link_f[3]}}" class="img-responsive" ></a>
+            <button type = "button"class="bun bun1" id="btn3">View</button></div>
+        </div>
+        <div class="item">
+            <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="{{img_link_f[4]}}" class="img-responsive"></a>
+            <button type = "button"class="bun bun1" id="btn4">View</button></div>
+        </div>
+        <div class="item">
+            <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="{{img_link_f[5]}}" class="img-responsive" ></a>
+            <button type = "button"class="bun bun1" id="btn5">View</button></div>
+        </div>
+
+    </div>
+
+    <a class="left carousel-control" href="#fruitscarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    <a class="right carousel-control" href="#fruitscarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+
+</div>
+</div>
+
+
+</div>
+</body>
+</html>
